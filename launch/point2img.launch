@@ -1,0 +1,7 @@
+<launch>
+<arg name="scloudname" default="/kinect2/sd/points"/>   <!--pointcloud2 topic name-->
+  <!-- start tilt command node -->
+  <node name="point2img_node"     pkg="cvusb_cam" type="point2img_node" output="screen">
+  <param name="scloudname" type="string" value="$(arg scloudname)" />
+  </node>
+</launch>

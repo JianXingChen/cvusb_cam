@@ -1,0 +1,12 @@
+<launch>
+
+  <node pkg="cvusb_cam" type="cv_cam_node" name="image_publisher" output="screen">
+    <remap from="camera/image" to="/cam0/image_raw"/>
+  </node>
+ 
+  <node name="image_view" pkg="image_view" type="image_view" respawn="false" output="screen">
+   <remap from="image" to="/cam0/image_raw"/>
+    <param name="autosize" value="true" />
+  </node>
+
+</launch>
